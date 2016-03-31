@@ -2,10 +2,12 @@
 
 set -e
 
-go version
+GO=go
+
+${GO} version
 
 export GOPATH=$(pwd)
 
 for i in $(seq 1 10); do
-	time go build github.com/gogits/gogs #102 packages
+	time ${GO} build github.com/gogits/gogs #102 packages
 done
